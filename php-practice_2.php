@@ -36,26 +36,26 @@ $personalInfos = [
 
 //問題1
 //まずは一次元の連想配列にするか、二次元の通常配列にしたい
-$array = array_column($personalInfos, 'tel','name'); //これで一次元の連想配列になった
+$personalInfos_one_dimension = array_column($personalInfos, 'tel','name'); //これで一次元の連想配列になった
 
 $name = 'Bさん';
-$tel = $array[$name];
+$tel = $personalInfos_one_dimension[$name];
 
-echo $name.'の電話番号は'.$tel,'です。';
+echo $name.'の電話番号は'.$tel,'です。'."\n";
 
 //問題2
-foreach ($personalInfos as $key => $data) {
-  $indexnum = $key + 1;
+foreach ($personalInfos as $index_num => $data) {
+  $number = $index_num + 1;
 
-  echo $indexnum.'番目の'.$data['name'].'のメールアドレスは'.$data['mail'].'で、電話番号は'.$data['tel'].'です。'."\n";
+  echo $number.'番目の'.$data['name'].'のメールアドレスは'.$data['mail'].'で、電話番号は'.$data['tel'].'です。'."\n";
 }
 
 //問題3
 $ageList = [25, 30, 18];
 
-foreach ($personalInfos as $key => $data) {
-    $personalInfos[$key] = array_merge($personalInfos[$key], ['age' => $ageList[$key]]);
-    var_dump($personalInfos[$key]);
+foreach ($personalInfos as $index_num => $data) {
+    $personalInfos[$index_num] = array_merge($personalInfos[$index_num], ['age' => $ageList[$index_num]]);
+    var_dump($personalInfos[$index_num]);
 }
 
 // Q3 オブジェクト-1

@@ -40,32 +40,32 @@ if ($age < 18 ) {
 echo "\n";  //改行を挿入するため
 
 // Q6 配列
-$array1 = ['東京都', '神奈川県', '栃木県', '千葉県', '埼玉県', '群馬県', '茨城県'];
-echo $array1[2].'と'.$array1[3].'は関東地方の都道府県です。';
+$prefectures = ['東京都', '神奈川県', '栃木県', '千葉県', '埼玉県', '群馬県', '茨城県'];
+echo $prefectures[2].'と'.$prefectures[3].'は関東地方の都道府県です。';
 echo "\n";  //改行を挿入するため
 
 // Q7 連想配列-1
-$array2 = [ '東京都' => '新宿区', '神奈川県' => '横浜市', '千葉県' => '千葉市', '埼玉県' => 'さいたま市', '栃木県' => '宇都宮市', '群馬県' => '前橋市', '茨城県' => '水戸市'];
-foreach ($array2 as $key => $value) {
-  echo $value."\n";  //改行を挿入するため
+$pre_cities = [ '東京都' => '新宿区', '神奈川県' => '横浜市', '千葉県' => '千葉市', '埼玉県' => 'さいたま市', '栃木県' => '宇都宮市', '群馬県' => '前橋市', '茨城県' => '水戸市'];
+foreach ($pre_cities as $prefecture => $city) {
+  echo $city."\n";  //改行を挿入するため
 }
 
 // Q8 連想配列-2
-foreach ($array2 as $key => $value) {  //Q7の再利用
-  if ('埼玉県' === $key) {
-    echo $key.'の県庁所在地は、'.$value.'です。';
+foreach ($pre_cities as $prefecture => $city) {  //Q7の再利用
+  if ('埼玉県' === $prefecture) {
+    echo $prefecture.'の県庁所在地は、'.$city.'です。';
     echo "\n";  //改行を挿入するため
   }
 }
 
 // Q9 連想配列-3
-$array2 += array( '愛知県' => '名古屋市', '大阪府' => '大阪市');
-foreach ($array2 as $key => $value) {
-  if ($key === '愛知県' || $key === '大阪府') {
-    echo $key.'は関東地方ではありません。';
+$pre_cities += array( '愛知県' => '名古屋市', '大阪府' => '大阪市');
+foreach ($pre_cities as $prefecture => $city) {
+  if ($prefecture === '愛知県' || $prefecture === '大阪府') {
+    echo $prefecture.'は関東地方ではありません。';
     echo "\n";  //改行を挿入するため
   } else {
-    echo $key.'の県庁所在地は、'.$value.'です。';
+    echo $prefecture.'の県庁所在地は、'.$city.'です。';
     echo "\n";  //改行を挿入するため
   }
 }
