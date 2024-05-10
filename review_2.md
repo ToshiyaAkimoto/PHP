@@ -72,9 +72,13 @@ echo $prev->diff($now)->format('%a')
 もし値を出力できる環境であれば、上記3行をphp Editorに入れて、実行し、どのような関数か想定をする。
 ブックマークから以下のページを開き、検索窓に検索ワードを入力する
 https://www.php.net/manual/ja/index.php
-・diff
-diffと入力したところいくつか候補が出てきたが、1行目・2行目がDateTimeについての変数となっているため、DateTimeInterface::diffをクリック。想定通り、DateTime::diffについての記述が出てきた。
-説明を見ると、「ふたつの DateTime オブジェクトの差を返します。」とあるので、やはり日付の差を算出するオブジェクトである。
+
+・DateTimeについて
+DateTimeで検索。DateTimeクラスを選択したところ、日付と時刻を表現するクラスとの説明。変更履歴の箇所に、「DateTime クラスの定数は、 DateTimeInterface で定義されるようになりました。」とあるので、DateTimeやDateTimeInterfaceといった言葉を軸に、次の言葉を調査する。
+
+・diffについて
+diffと入力したところいくつか候補が出てきたが、DateTimeInterface::diffがあったのでクリック。想定通り、DateTime::diffについての記述が出てきた。
+説明を見ると、「ふたつの日付の差をあらわす DateInterval オブジェクトを返します。」とある。やはり日付の差を算出するオブジェクトである。
 
 ・formatについて
 formatと入力したところこちらもいくつか候補が出てきたが、上記の調査によって日付の差を算出するものであるとわかっているため、DateInterval::formatをクリック。

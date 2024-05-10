@@ -113,7 +113,7 @@ $yamada->attend('PHP');
 //問題1
 date_default_timezone_set('Asia/Tokyo');
 $date = new DateTime();
-echo $date->modify('-1 month')->format('Y-m-d H:i:s');
+echo $date->modify('-1 month')->format('Y-m-d H:i:s')."\n";
 
 
 //問題2
@@ -121,7 +121,6 @@ date_default_timezone_set('Asia/Tokyo');
 $date = new DateTime();
 $base = new DateTime('1992/04/25 00:00:00');
 
-$subtraction = $base-> diff($date);
-echo 'あの日から'.$subtraction->days.'日経過しました。';
+echo 'あの日から'.$base-> diff($date)->days.'日経過しました。'."\n";
 
 ?>
